@@ -376,4 +376,71 @@ I live in ${address.city}.
 I love ${hobbies1.join(', ')}.
 Follow me for coding adventures!`
 
+//print the user profile and bio
 console.log(personlizedBio)
+
+//Clase 18
+
+function calculateDiscountPrice (price, discountPercentage) {
+    const discount = (price * discountPercentage) /100
+    const priceWithDiscount = price - discount
+    return priceWithDiscount
+}
+
+const originalPrice = 100
+const discountPercentage = 20
+const finalPrice = calculateDiscountPrice(originalPrice, discountPercentage)
+
+console.log('Original Price: $',originalPrice)
+console.log('Dicount: ',discountPercentage,'%')
+console.log('Price with discount: $',finalPrice)
+
+
+
+//Clase 21 Funciiones puras e impuras
+
+//Funciones puras
+
+// Side Effects esto las convierte en impuras
+// 1. Variables
+// Parametros
+// Solicitures HTTp
+// Imprimier mensajes en pantalla o ocnosola
+// Manipulacion del DOM
+// Obtener la hora actual
+
+function sum2 (a, b) {
+    return a + b
+}
+
+
+// Funcion impuras
+
+function sum3 (a, b) {
+    console.log('A: ',a)
+    return a + b
+}
+
+let total = 0
+
+function sumWithSideEffect () {
+    total += a
+    return total
+}
+
+// Ejemplosde funciones puras
+
+function square(x) {
+    return x * x
+}
+
+function addTen (y) {
+    return y + 10
+}
+
+const number = 5
+const finalResult = addTen(square(number))
+console.log(finalResult)
+
+//Identificador this
+
