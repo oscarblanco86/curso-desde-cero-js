@@ -10,36 +10,43 @@ const winningParticipants = [
 ];
 
 function findWinnerByName(name) {
-  return (winner = winningParticipants.find(
-    (participant) =>
-      participant.name === name || "No winner found with that name",
-  ));
+  const winner = winningParticipants.find(
+    (participant) => participant.name === name
+  )
+    return winner || "No winner found with that name"
 }
 
 function findIndexWinnerByTicket(ticketNumber) {
-  return (index =
-    winningParticipants.find(
-      (participant) => participant.ticketNumber === ticketNumber,
-    ) || "No winner found with that ticket number");
+  const index = winningParticipants.findIndex(
+    (participant) => participant.ticketNumber === ticketNumber,
+  ) 
+    return index !== -1 ? index : "No winner found with that ticket number"
 }
 
 function displayWinnerInformation(winner) {
-  console.log(
-    `2The winner is ${winner.name} with ticket number ${winner.ticketNumber}`,
-  );
+  // console.log(
+  //   `The winner is ${winner.name} with ticket number ${winner.ticketNumber}`,
+  // );
+  console.log("Dsplay")
   if (
     winner !== undefined &&
     winner != null &&
     winner !== "No winner found with that name"
   ) {
-    return "1Winner information: ", winner;
+    information = "1Winner information: " + winner
+    return information
   } else {
-    return "1No winner found with that name";
+    return "No winner found with that name"
   }
 }
 
-console.log(displayWinnerInformation(findWinnerByName("oscar")));
-// console.log(displayWinnerInformation(findIndexWinnerByTicket(001)));
+console.log('Find Winner: ',findWinnerByName("Alice"))
+console.log('Find Index: ',findIndexWinnerByTicket(007))
 
-// console.log(displayWinnerInformation(findWinnerByName("Sarahi")));
-// console.log(displayWinnerInformation(findIndexWinnerByTicket(015)));
+console.log('Display index: ',displayWinnerInformation(findIndexWinnerByTicket(004)));
+console.log('Display index: ',displayWinnerInformation(findIndexWinnerByTicket(015)));
+
+console.log('Display info: ', displayWinnerInformation(findWinnerByName("Jenny")));
+console.log('Display info: ', displayWinnerInformation(findWinnerByName("Sarahi")));
+
+
